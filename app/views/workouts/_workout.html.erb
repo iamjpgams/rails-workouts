@@ -1,0 +1,20 @@
+
+<% if workout.user == current_user %>
+<div id="<%= dom_id workout %>" class="accent card gap-x-large columns">
+  <div class="card-l">
+    <h2> <%= link_to workout.Name, workout %></h2>
+    <div class="ideal-for">
+      <h3>Score</h3>
+      <p><%= workout.Score %></p>
+    </div>
+  </div>
+  <div class="card-r">
+    <h4><%= workout.Style %></h4>
+    <%= workout.Desc %>
+   
+    <hr>
+     <p>created at <%= workout.created_at %>
+  </div>
+
+</div>
+<% end %>

@@ -1,0 +1,24 @@
+
+<% if user_signed_in? %>
+<% content_for :title, "Workouts" %>
+
+<h1><%= link_to 'Workouts', root_path, role:'link' %></h1>
+
+<div id="workouts">
+
+  <% @workouts.each do |workout| %>
+    <%= render workout %>
+   
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+
+<%= link_to "New workout", new_workout_path, role:"link", class:'button' %>
+
+<% end %>
+<% else %>
+
+<p>If you want to understand the logic or even try to do come up with your own version here is an <a href="/my-training-program/">explanation of my program</a> / ou en <a href="/mon-plan-dentrainement/">Français</a>. I also created a <a href="/run#last">running log</a> and you can also go through my <a href="/personal-best">Personal Records</a> If you wish.</p>
+
+<% end %>

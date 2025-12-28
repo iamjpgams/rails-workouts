@@ -1,0 +1,19 @@
+
+
+<%= render @workout %>
+
+<div class="flex">
+
+
+
+
+<%= link_to "Back", workouts_path, role:"link", class: 'button' %>
+
+
+<% if @workout.user == current_user %>
+<%= link_to "Edit", edit_workout_path(@workout), role:"link", class: 'button' %>
+<%= button_to "Destroy", @workout, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?"}, class:"button" %>
+<% end %>
+
+
+</div>
