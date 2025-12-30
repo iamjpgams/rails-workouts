@@ -1,5 +1,7 @@
 
 <% if workout.user == current_user %>
+<div class="wod-day">
+<h1 class="wod-date"><%= link_to workout.created_at.strftime("%d %b %y"), workout, role:'link' %></h1>
 <div id="<%= dom_id workout %>" class="accent card gap-x-large columns">
   <div class="card-l">
     <h2> <%= link_to workout.Name, workout, role:"link" %></h2>
@@ -11,10 +13,10 @@
   <div class="card-r">
     <h4><%= workout.Style %></h4>
     <%= simple_format(workout.Desc) %>
-   <br/>
-    <hr>
-     <p><%= workout.created_at.strftime("%d %b %y") %>
+
+    
   </div>
 
+</div>
 </div>
 <% end %>
